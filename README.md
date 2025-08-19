@@ -24,4 +24,4 @@ Criar um programa funcional de Jogo da Velha com diferentes modos de jogo e rank
 
 ## 👩‍💻 Autoria  
 
-- *Ariane Archanjo*
+- *Ariane da Silva Archanjo*
