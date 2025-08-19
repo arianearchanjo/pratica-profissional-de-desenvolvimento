@@ -1,0 +1,14 @@
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.AssemblyInfoInputs.cache
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.AssemblyInfo.cs
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.csproj.CoreCompileInputs.cache
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.exe
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.deps.json
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.runtimeconfig.json
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.dll
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.pdb
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.dll
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\refint\Jogo da Velha.dll
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.pdb
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.genruntimeconfig.cache
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\ref\Jogo da Velha.dll

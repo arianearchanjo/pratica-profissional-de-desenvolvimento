@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Ariane\\\u00C1rea de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Pr\u00E1tica Profissional Desenvolvimento\\Jogo da Velha\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E82B8B42-6F82-4C0E-9F13-3847BDD8ACF6}|Jogo da Velha\\Jogo da Velha.csproj|c:\\ariane\\\u00E1rea de trabalho\\engenharia de software - ub\\2 semestre\\pr\u00E1tica profissional desenvolvimento\\jogo da velha\\jogo da velha\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E82B8B42-6F82-4C0E-9F13-3847BDD8ACF6}|Jogo da Velha\\Jogo da Velha.csproj|solutionrelative:jogo da velha\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Ariane\\\u00C1rea de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Pr\u00E1tica Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Program.cs",
+              "RelativeDocumentMoniker": "Jogo da Velha\\Program.cs",
+              "ToolTip": "C:\\Ariane\\\u00C1rea de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Pr\u00E1tica Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Program.cs",
+              "RelativeToolTip": "Jogo da Velha\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T22:56:58.916Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
