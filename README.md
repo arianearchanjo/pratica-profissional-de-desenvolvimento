@@ -25,3 +25,8 @@ Criar um programa funcional de Jogo da Velha com diferentes modos de jogo e rank
 ## 👩‍💻 Autoria  
 
 - *Ariane da Silva Archanjo*
+- Lucas Vinicius Barros Dias
+- Pedro Henrique Kafka Zaratino
+- Caio Melo Canhetti
+- Rafael Martins Schreurs Sales
+- Matheus Sizanoski Figueiredo
