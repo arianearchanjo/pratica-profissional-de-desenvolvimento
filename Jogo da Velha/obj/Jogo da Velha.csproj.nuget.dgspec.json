@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Ariane\\Área de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Prática Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Jogo da Velha.csproj": {}
+    "C:\\Users\\arian\\Documents\\jogo-da-velha\\Jogo da Velha\\Jogo da Velha.csproj": {}
   },
   "projects": {
-    "C:\\Ariane\\Área de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Prática Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Jogo da Velha.csproj": {
+    "C:\\Users\\arian\\Documents\\jogo-da-velha\\Jogo da Velha\\Jogo da Velha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Ariane\\Área de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Prática Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Jogo da Velha.csproj",
+        "projectUniqueName": "C:\\Users\\arian\\Documents\\jogo-da-velha\\Jogo da Velha\\Jogo da Velha.csproj",
         "projectName": "Jogo da Velha",
-        "projectPath": "C:\\Ariane\\Área de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Prática Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\Jogo da Velha.csproj",
+        "projectPath": "C:\\Users\\arian\\Documents\\jogo-da-velha\\Jogo da Velha\\Jogo da Velha.csproj",
         "packagesPath": "C:\\Users\\arian\\.nuget\\packages\\",
-        "outputPath": "C:\\Ariane\\Área de Trabalho\\Engenharia de Software - UB\\2 Semestre\\Prática Profissional Desenvolvimento\\Jogo da Velha\\Jogo da Velha\\obj\\",
+        "outputPath": "C:\\Users\\arian\\Documents\\jogo-da-velha\\Jogo da Velha\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

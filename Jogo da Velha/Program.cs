@@ -10,6 +10,7 @@ class Program
 
         do
         {
+            Creditos();
             Console.WriteLine("==========================================================");
             Console.WriteLine("                      Jogo da Velha");
             Console.WriteLine("==========================================================");
@@ -28,10 +29,7 @@ class Program
             switch (opcao)
             {
                 case 1:
-                    Console.WriteLine("Você escolheu jogar contra outro jogador.");
-                    InicializarTabuleiro();
-                    MostrarTabuleiro();
-                    Console.ReadKey();
+                    JogarContraJogador();
                     break;
                 case 2:
                     Console.WriteLine("Você escolheu jogar contra o computador (nível fácil).");
@@ -61,6 +59,24 @@ class Program
             Console.Clear();
 
         } while (opcao != 5);
+    }
+
+    static void Creditos()
+    {
+        Console.WriteLine("==========================================================");
+        Console.WriteLine("Turma: 2ESCN");
+        Console.WriteLine("==========================================================");
+        Console.WriteLine("Desenvolvedores:");
+        Console.WriteLine("Ariane da Silva Archanjo - 2025106857");
+        Console.WriteLine("Lucas Vinicius Barros Dias - 2025105450 ");
+        Console.WriteLine("Pedro Henrique Kafka Zaratino - 2025105057");
+        Console.WriteLine("Caio Melo Canhetti - 2025104636");
+        Console.WriteLine("Rafael Martins Schreurs Sales - 2025105454");
+        Console.WriteLine("Matheus Sizanoski Figueiredo - 2025105007");
+        Console.WriteLine("==========================================================");
+        Console.WriteLine("Pressione qualquer tecla para continuar...");
+        Console.ReadKey();
+        Console.Clear();
     }
 
     static void InicializarTabuleiro()
@@ -93,5 +109,96 @@ class Program
             if (i < 2) Console.WriteLine("---+---+---");
         }
         Console.WriteLine();
+    }
+
+    static void JogarContraJogador()
+    {
+        InicializarTabuleiro();
+        string JogadorAtual = "X";g
+        int jogadas = 0;
+        bool vitoria = false;
+
+        while (jogadas < 9 && !vitoria)
+        {
+            Console.Clear();
+            MostrarTabuleiro();
+            Console.WriteLine($"Vez do jogador {JogadorAtual}. Escolha uma posição (1-9): ");
+            string entrada = Console.ReadLine();
+            int.TryParse(entrada, out int posicao);
+
+            if (posicao >= 1 && posicao <= 9)
+            {
+                int linha = (posicao - 1) / 3;
+                int coluna = (posicao - 1) % 3;
+                if (tabuleiro[linha, coluna] != "X" && tabuleiro[linha, coluna] != "O")
+                {
+                    tabuleiro[linha, coluna] = JogadorAtual;
+                    jogadas++;
+
+                    // Verificar vitória
+                    vitoria = VerificarVencedor(JogadorAtual);
+
+                    if (!vitoria)
+                        JogadorAtual = (JogadorAtual == "X") ? "O" : "X"; // Alternar jogador
+                }
+                else
+                {
+                    Console.WriteLine("Posição já ocupada. Tente novamente.");
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida. Tente novamente.");
+                Console.ReadKey();
+            }
+        }
+
+        Console.Clear();
+        MostrarTabuleiro();
+
+        if (vitoria)
+            Console.WriteLine($"Jogador {JogadorAtual} venceu!");
+        else
+            Console.WriteLine("Empate!");
+
+        Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
+        Console.ReadKey();
+    }
+
+    static bool VerificarVencedor(string jogador)
+    {
+        // Linhas
+        for (int i = 0; i < 3; i++)
+        {
+            if (tabuleiro[i, 0] == jogador && tabuleiro[i, 1] == jogador && tabuleiro[i, 2] == jogador)
+                return true;
+        }
+
+        // Colunas
+        for (int j = 0; j < 3; j++)
+        {
+            if (tabuleiro[0, j] == jogador && tabuleiro[1, j] == jogador && tabuleiro[2, j] == jogador)
+                return true;
+        }
+
+        // Diagonais
+        if (tabuleiro[0, 0] == jogador && tabuleiro[1, 1] == jogador && tabuleiro[2, 2] == jogador)
+            return true;
+
+        if (tabuleiro[0, 2] == jogador && tabuleiro[1, 1] == jogador && tabuleiro[2, 0] == jogador)
+            return true;
+
+        return false;
+    }
+
+    static bool TabuleiroCheio()
+    {
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                if (tabuleiro[i, j] != "X" && tabuleiro[i, j] != "O")
+                    return false;
+
+        return true;
     }
 }

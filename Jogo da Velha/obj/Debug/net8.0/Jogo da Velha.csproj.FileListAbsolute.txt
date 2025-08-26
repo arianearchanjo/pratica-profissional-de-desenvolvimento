@@ -12,3 +12,4 @@ C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Prof
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.pdb
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.genruntimeconfig.cache
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\ref\Jogo da Velha.dll
+C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.sourcelink.json
