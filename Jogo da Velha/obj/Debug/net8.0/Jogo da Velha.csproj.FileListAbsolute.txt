@@ -13,3 +13,18 @@ C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Prof
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.genruntimeconfig.cache
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\ref\Jogo da Velha.dll
 C:\Ariane\Área de Trabalho\Engenharia de Software - UB\2 Semestre\Prática Profissional Desenvolvimento\Jogo da Velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.sourcelink.json
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.exe
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.deps.json
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.runtimeconfig.json
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.dll
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\bin\Debug\net8.0\Jogo da Velha.pdb
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.AssemblyInfoInputs.cache
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.AssemblyInfo.cs
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.csproj.CoreCompileInputs.cache
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.sourcelink.json
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.dll
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\refint\Jogo da Velha.dll
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.pdb
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\Jogo da Velha.genruntimeconfig.cache
+C:\Users\arian\Documents\jogo-da-velha\Jogo da Velha\obj\Debug\net8.0\ref\Jogo da Velha.dll

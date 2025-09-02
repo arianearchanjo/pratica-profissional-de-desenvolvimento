@@ -33,8 +33,7 @@ class Program
                     break;
                 case 2:
                     Console.WriteLine("Você escolheu jogar contra o computador (nível fácil).");
-                    InicializarTabuleiro();
-                    MostrarTabuleiro();
+                    JogoContraComputadorFacil();
                     Console.ReadKey();
                     break;
                 case 3:
@@ -114,7 +113,7 @@ class Program
     static void JogarContraJogador()
     {
         InicializarTabuleiro();
-        string JogadorAtual = "X";g
+        string JogadorAtual = "X";
         int jogadas = 0;
         bool vitoria = false;
 
@@ -192,13 +191,77 @@ class Program
         return false;
     }
 
-    static bool TabuleiroCheio()
+    static void JogoContraComputadorFacil()
     {
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                if (tabuleiro[i, j] != "X" && tabuleiro[i, j] != "O")
-                    return false;
+        InicializarTabuleiro();
+        string jogadorHumano = "X";
+        string jogadorComputador = "O";
+        string jogadorAtual = jogadorHumano;
+        int jogadas = 0;
+        bool vitoria = false;
+        int posicao;
+        int linha, coluna;
 
-        return true;
+        Random random = new Random();
+
+        while (jogadas < 9 && !vitoria)
+        {
+            Console.Clear();
+            MostrarTabuleiro();
+
+            if (jogadorAtual == jogadorHumano)
+            {
+                Console.WriteLine($"Sua vez (X). Escolha uma posição (1-9): ");
+                string entrada = Console.ReadLine();
+                int.TryParse(entrada, out posicao);
+
+                linha = (posicao - 1) / 3;
+                coluna = (posicao - 1) % 3;
+
+                if (posicao >= 1 && posicao <= 9 && tabuleiro[linha, coluna] != "X" && tabuleiro[linha, coluna] != "O")
+                {
+                    tabuleiro[linha, coluna] = jogadorHumano;
+                    jogadas++;
+                    vitoria = VerificarVencedor(jogadorHumano);
+                    jogadorAtual = jogadorComputador;
+                }
+                else
+                {
+                    Console.WriteLine("Jogada inválida. Tente novamente.");
+                    Console.ReadKey();
+                }
+            }
+            else if (jogadorAtual == jogadorComputador)
+            {
+                // computador joga aleatório
+                do
+                {
+                    posicao = random.Next(1, 10);
+                    linha = (posicao - 1) / 3;
+                    coluna = (posicao - 1) % 3;
+                }
+                while (tabuleiro[linha, coluna] == "X" || tabuleiro[linha, coluna] == "O");
+
+                tabuleiro[linha, coluna] = jogadorComputador;
+                jogadas++;
+                vitoria = VerificarVencedor(jogadorComputador);
+                jogadorAtual = jogadorHumano;
+                Console.WriteLine($"Computador escolheu a posição {posicao}. Pressione qualquer tecla para continuar...");
+                Console.ReadKey();
+            }
+        }
+
+        Console.Clear();
+        MostrarTabuleiro();
+        if (vitoria)
+        {
+            Console.WriteLine(jogadorAtual == jogadorHumano ? "Computador venceu!" : "Você venceu!");
+            Console.ReadKey();
+        }
+        else
+        {
+            Console.WriteLine("Empate!");
+            Console.ReadKey();
+        }
     }
 }
