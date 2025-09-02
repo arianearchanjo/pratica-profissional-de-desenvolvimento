@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 class Program
 {
@@ -11,16 +12,23 @@ class Program
         do
         {
             Creditos();
+
+            // Menu colorido
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("==========================================================");
             Console.WriteLine("                      Jogo da Velha");
             Console.WriteLine("==========================================================");
+            Console.ResetColor();
             Console.WriteLine("Pressione a tecla correspondente a sua escolha:");
             Console.WriteLine("1 - Jogar contra outro jogador");
             Console.WriteLine("2 - Jogar contra o computador (nível fácil)");
             Console.WriteLine("3 - Jogar contra o computador (nível difícil)");
             Console.WriteLine("4 - Ver Ranking");
             Console.WriteLine("5 - Sair");
+
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("==========================================================");
+            Console.ResetColor();
             Console.Write("Opção: ");
 
             int.TryParse(Console.ReadLine(), out opcao);
@@ -44,7 +52,6 @@ class Program
                     break;
                 case 4:
                     Console.WriteLine("Você escolheu ver o ranking.");
-                    // Ranking será implementado depois
                     Console.ReadKey();
                     break;
                 case 5:
@@ -62,9 +69,11 @@ class Program
 
     static void Creditos()
     {
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("==========================================================");
         Console.WriteLine("Turma: 2ESCN");
         Console.WriteLine("==========================================================");
+        Console.ResetColor();
         Console.WriteLine("Desenvolvedores:");
         Console.WriteLine("Ariane da Silva Archanjo - 2025106857");
         Console.WriteLine("Lucas Vinicius Barros Dias - 2025105450 ");
@@ -72,7 +81,9 @@ class Program
         Console.WriteLine("Caio Melo Canhetti - 2025104636");
         Console.WriteLine("Rafael Martins Schreurs Sales - 2025105454");
         Console.WriteLine("Matheus Sizanoski Figueiredo - 2025105007");
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("==========================================================");
+        Console.ResetColor();
         Console.WriteLine("Pressione qualquer tecla para continuar...");
         Console.ReadKey();
         Console.Clear();
@@ -93,21 +104,49 @@ class Program
 
     static void MostrarTabuleiro()
     {
-        Console.WriteLine("Jogo da Velha");
-        Console.WriteLine();
+        Console.WriteLine("Jogo da Velha\n");
 
         for (int i = 0; i < 3; i++)
         {
             Console.Write(" ");
             for (int j = 0; j < 3; j++)
             {
+                // Colore X azul e O vermelho
+                if (tabuleiro[i, j] == "X")
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                else if (tabuleiro[i, j] == "O")
+                    Console.ForegroundColor = ConsoleColor.Red;
+                else
+                    Console.ResetColor();
+
                 Console.Write(tabuleiro[i, j]);
+                Console.ResetColor();
+
                 if (j < 2) Console.Write(" | ");
             }
             Console.WriteLine();
             if (i < 2) Console.WriteLine("---+---+---");
         }
         Console.WriteLine();
+    }
+
+    static void MostrarTurno(string jogador)
+    {
+        // Animação de piscagem do turno (mais lenta)
+        for (int i = 0; i < 2; i++)
+        {
+            Console.Clear();
+            MostrarTabuleiro();
+
+            Console.ForegroundColor = jogador == "X" ? ConsoleColor.Blue : ConsoleColor.Red;
+            Console.WriteLine($"Vez do jogador {jogador}");
+            Console.ResetColor();
+            Thread.Sleep(1000);
+
+            Console.Clear();
+            MostrarTabuleiro();
+            Thread.Sleep(1000);
+        }
     }
 
     static void JogarContraJogador()
@@ -119,9 +158,9 @@ class Program
 
         while (jogadas < 9 && !vitoria)
         {
-            Console.Clear();
-            MostrarTabuleiro();
-            Console.WriteLine($"Vez do jogador {JogadorAtual}. Escolha uma posição (1-9): ");
+            MostrarTurno(JogadorAtual);
+
+            Console.WriteLine($"Escolha uma posição (1-9): ");
             string entrada = Console.ReadLine();
             int.TryParse(entrada, out int posicao);
 
@@ -133,6 +172,7 @@ class Program
                 {
                     tabuleiro[linha, coluna] = JogadorAtual;
                     jogadas++;
+                    Console.Beep(500, 150);
 
                     // Verificar vitória
                     vitoria = VerificarVencedor(JogadorAtual);
@@ -151,35 +191,41 @@ class Program
                 Console.WriteLine("Entrada inválida. Tente novamente.");
                 Console.ReadKey();
             }
+            Console.Clear();
         }
 
-        Console.Clear();
         MostrarTabuleiro();
 
         if (vitoria)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Jogador {JogadorAtual} venceu!");
+            Console.Beep(800, 400);
+        }
         else
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Empate!");
+            Console.Beep(600, 400);
+        }
 
+        Console.ResetColor();
         Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
         Console.ReadKey();
+        Console.Clear();
     }
 
     static bool VerificarVencedor(string jogador)
     {
         // Linhas
         for (int i = 0; i < 3; i++)
-        {
             if (tabuleiro[i, 0] == jogador && tabuleiro[i, 1] == jogador && tabuleiro[i, 2] == jogador)
                 return true;
-        }
 
         // Colunas
         for (int j = 0; j < 3; j++)
-        {
             if (tabuleiro[0, j] == jogador && tabuleiro[1, j] == jogador && tabuleiro[2, j] == jogador)
                 return true;
-        }
 
         // Diagonais
         if (tabuleiro[0, 0] == jogador && tabuleiro[1, 1] == jogador && tabuleiro[2, 2] == jogador)
@@ -206,12 +252,10 @@ class Program
 
         while (jogadas < 9 && !vitoria)
         {
-            Console.Clear();
-            MostrarTabuleiro();
-
             if (jogadorAtual == jogadorHumano)
             {
-                Console.WriteLine($"Sua vez (X). Escolha uma posição (1-9): ");
+                MostrarTurno(jogadorHumano);
+                Console.WriteLine("Sua vez (X). Escolha uma posição (1-9): ");
                 string entrada = Console.ReadLine();
                 int.TryParse(entrada, out posicao);
 
@@ -222,6 +266,7 @@ class Program
                 {
                     tabuleiro[linha, coluna] = jogadorHumano;
                     jogadas++;
+                    Console.Beep(500, 150);
                     vitoria = VerificarVencedor(jogadorHumano);
                     jogadorAtual = jogadorComputador;
                 }
@@ -231,9 +276,19 @@ class Program
                     Console.ReadKey();
                 }
             }
-            else if (jogadorAtual == jogadorComputador)
+            else
             {
-                // computador joga aleatório
+                MostrarTurno(jogadorComputador);
+
+                // Animação de "computador pensando"
+                Console.Write("Computador pensando");
+                for (int i = 0; i < 3; i++)
+                {
+                    Thread.Sleep(800);
+                    Console.Write(".");
+                }
+                Console.WriteLine();
+
                 do
                 {
                     posicao = random.Next(1, 10);
@@ -244,24 +299,42 @@ class Program
 
                 tabuleiro[linha, coluna] = jogadorComputador;
                 jogadas++;
+                Console.Beep(400, 200);
                 vitoria = VerificarVencedor(jogadorComputador);
                 jogadorAtual = jogadorHumano;
                 Console.WriteLine($"Computador escolheu a posição {posicao}. Pressione qualquer tecla para continuar...");
                 Console.ReadKey();
             }
+
+            Console.Clear();
+            MostrarTabuleiro();
         }
 
-        Console.Clear();
-        MostrarTabuleiro();
         if (vitoria)
         {
-            Console.WriteLine(jogadorAtual == jogadorHumano ? "Computador venceu!" : "Você venceu!");
-            Console.ReadKey();
+            if (jogadorAtual == jogadorHumano)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Computador venceu!");
+                Console.Beep(700, 400);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Você venceu!");
+                Console.Beep(900, 400);
+            }
         }
         else
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Empate!");
-            Console.ReadKey();
+            Console.Beep(600, 400);
         }
+
+        Console.ResetColor();
+        Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
+        Console.ReadKey();
+        Console.Clear();
     }
 }
