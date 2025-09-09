@@ -12,8 +12,6 @@ class Program
         do
         {
             Creditos();
-
-            // Menu colorido
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("==========================================================");
             Console.WriteLine("                      Jogo da Velha");
@@ -67,7 +65,7 @@ class Program
         } while (opcao != 5);
     }
 
-    static void Creditos()
+    static void Creditos() //Ariane
     {
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("==========================================================");
@@ -76,11 +74,11 @@ class Program
         Console.ResetColor();
         Console.WriteLine("Desenvolvedores:");
         Console.WriteLine("Ariane da Silva Archanjo - 2025106857");
-        Console.WriteLine("Lucas Vinicius Barros Dias - 2025105450 ");
-        Console.WriteLine("Pedro Henrique Kafka Zaratino - 2025105057");
         Console.WriteLine("Caio Melo Canhetti - 2025104636");
-        Console.WriteLine("Rafael Martins Schreurs Sales - 2025105454");
+        Console.WriteLine("Lucas Vinicius Barros Dias - 2025105450 ");
         Console.WriteLine("Matheus Sizanoski Figueiredo - 2025105007");
+        Console.WriteLine("Pedro Henrique Kafka Zaratino - 2025105057");
+        Console.WriteLine("Rafael Martins Schreurs Sales - 2025105454");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("==========================================================");
         Console.ResetColor();
@@ -89,7 +87,7 @@ class Program
         Console.Clear();
     }
 
-    static void InicializarTabuleiro()
+    static void InicializarTabuleiro() //Ariane
     {
         int posicao = 1;
         for (int i = 0; i < 3; i++)
@@ -102,7 +100,7 @@ class Program
         }
     }
 
-    static void MostrarTabuleiro()
+    static void MostrarTabuleiro() //Ariane
     {
         Console.WriteLine("Jogo da Velha\n");
 
@@ -130,9 +128,8 @@ class Program
         Console.WriteLine();
     }
 
-    static void MostrarTurno(string jogador)
+    static void MostrarTurno(string jogador) //Ariane
     {
-        // Animação de piscagem do turno (mais lenta)
         for (int i = 0; i < 2; i++)
         {
             Console.Clear();
@@ -141,7 +138,7 @@ class Program
             Console.ForegroundColor = jogador == "X" ? ConsoleColor.Blue : ConsoleColor.Red;
             Console.WriteLine($"Vez do jogador {jogador}");
             Console.ResetColor();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
 
             Console.Clear();
             MostrarTabuleiro();
@@ -149,7 +146,7 @@ class Program
         }
     }
 
-    static void JogarContraJogador()
+    static void JogarContraJogador() //Ariane
     {
         InicializarTabuleiro();
         string JogadorAtual = "X";
@@ -198,7 +195,7 @@ class Program
 
         if (vitoria)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine($"Jogador {JogadorAtual} venceu!");
             Console.Beep(800, 400);
         }
@@ -215,7 +212,7 @@ class Program
         Console.Clear();
     }
 
-    static bool VerificarVencedor(string jogador)
+    static bool VerificarVencedor(string jogador) // Ariane
     {
         // Linhas
         for (int i = 0; i < 3; i++)
@@ -237,7 +234,7 @@ class Program
         return false;
     }
 
-    static void JogoContraComputadorFacil()
+    static void JogoContraComputadorFacil() //Pedro e Ariane
     {
         InicializarTabuleiro();
         string jogadorHumano = "X";
@@ -281,6 +278,7 @@ class Program
                 MostrarTurno(jogadorComputador);
 
                 // Animação de "computador pensando"
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Computador pensando");
                 for (int i = 0; i < 3; i++)
                 {
@@ -302,12 +300,13 @@ class Program
                 Console.Beep(400, 200);
                 vitoria = VerificarVencedor(jogadorComputador);
                 jogadorAtual = jogadorHumano;
-                Console.WriteLine($"Computador escolheu a posição {posicao}. Pressione qualquer tecla para continuar...");
-                Console.ReadKey();
+                Console.WriteLine($"Computador escolheu a posição {posicao}.");
+                Thread.Sleep(1000);
             }
 
             Console.Clear();
             MostrarTabuleiro();
+            Thread.Sleep(800);
         }
 
         if (vitoria)
@@ -336,5 +335,20 @@ class Program
         Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
         Console.ReadKey();
         Console.Clear();
+    }
+
+    static void escolherJogadaMinimax() //Caio e Rafael
+    {
+
+    }
+
+    static void JogoContraComputadorDificil() //Caio e Rafael
+    {
+
+    }
+
+    static void RankingDinamico() //Lucas e Matheus
+    {
+
     }
 }
