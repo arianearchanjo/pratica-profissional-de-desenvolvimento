@@ -382,7 +382,7 @@ class Program
                 Console.WriteLine();
 
                 int posicaoEscolhida;
-                if (rnd.Next(0, 100) < 60)
+                if (rnd.Next(0, 100) < 70)
                     posicaoEscolhida = EscolherJogadaMinimax(jogadorComp, jogadorHumano);
                 else
                 {
