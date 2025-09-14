@@ -1,11 +1,24 @@
 ﻿using System;
 using System.Threading;
-
+using System.Collections.Generic; 
 class Program
 {
     static string[,] tabuleiro = new string[3, 3];
 
+    static Dictionary<string, int> ranking = new Dictionary<string, int>()
+    {
+        { "Jogador X", 0 },
+        { "Jogador O", 0 },
+        { "Computador", 0 },
+        { "Empates", 0 }
+    };
+
     static void Main(string[] args)
+    {
+        Menu();
+    }
+
+    static void Menu()
     {
         int opcao = 0;
 
@@ -40,17 +53,16 @@ class Program
                 case 2:
                     Console.WriteLine("Você escolheu jogar contra o computador (nível fácil).");
                     JogoContraComputadorFacil();
-                    Console.ReadKey();
                     break;
                 case 3:
                     Console.WriteLine("Você escolheu jogar contra o computador (nível difícil).");
-                    InicializarTabuleiro();
-                    MostrarTabuleiro();
-                    Console.ReadKey();
+                    JogoContraComputadorDificil();
                     break;
                 case 4:
-                    Console.WriteLine("Você escolheu ver o ranking.");
+                    ExibirRanking();
+                    Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
                     Console.ReadKey();
+                    Console.Clear();
                     break;
                 case 5:
                     Console.WriteLine("Saindo do jogo...");
@@ -198,18 +210,23 @@ class Program
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine($"Jogador {JogadorAtual} venceu!");
             Console.Beep(800, 400);
+
+            // Atualiza ranking PvP
+            if (JogadorAtual == "X")
+                ranking["Jogador X"]++;
+            else
+                ranking["Jogador O"]++;
         }
         else
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Empate!");
             Console.Beep(600, 400);
+            ranking["Empates"]++;
         }
 
-        Console.ResetColor();
-        Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
-        Console.ReadKey();
         Console.Clear();
+        Menu();
     }
 
     static bool VerificarVencedor(string jogador) // Ariane
@@ -276,8 +293,6 @@ class Program
             else
             {
                 MostrarTurno(jogadorComputador);
-
-                // Animação de "computador pensando"
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("Computador pensando");
                 for (int i = 0; i < 3; i++)
@@ -316,12 +331,14 @@ class Program
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Computador venceu!");
                 Console.Beep(700, 400);
+                ranking["Computador"]++;
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Você venceu!");
                 Console.Beep(900, 400);
+                ranking["Jogador X"]++;
             }
         }
         else
@@ -329,12 +346,11 @@ class Program
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Empate!");
             Console.Beep(600, 400);
+            ranking["Empates"]++;
         }
 
-        Console.ResetColor();
-        Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
-        Console.ReadKey();
         Console.Clear();
+        Menu();
     }
 
     static void escolherJogadaMinimax() //Caio e Rafael
@@ -346,9 +362,18 @@ class Program
     {
 
     }
-
-    static void RankingDinamico() //Lucas e Matheus
+    static void ExibirRanking()
     {
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("======= Ranking =======");
+        Console.ResetColor();
 
+        foreach (var item in ranking)
+        {
+            Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+
+        Console.WriteLine();
     }
 }
